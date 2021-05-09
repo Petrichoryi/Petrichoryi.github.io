@@ -37,14 +37,5 @@
  POST请求提交表单后端没做转义直接入库 后端从数据库中取出数据没做转义直接输出给前端 前端拿到后端数据没做转义直接渲染成 DOM  存储型XSS防御：   后端需要对提交的数据进行过滤。 前端也可以做一下处理方式，比如对script标签，将特殊字符替换成HTML编码这些等。 纯前端渲染，把代码和数据分隔开。渲染过程：浏览器先加载一个静态 HTML，此 HTML 中不包含任何跟业务相关的数据；然后浏览器执行 HTML 中的 JavaScript；JavaScript 通过 Ajax 加载业务数据，调用 DOM API 更新到页面上。    DOM型XSS</description>
     </item>
     
-    <item>
-      <title>Archives</title>
-      <link>https://example.com/p/archives/</link>
-      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/p/archives/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

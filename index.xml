@@ -107,14 +107,6 @@
 &lt;/ol&gt;
 </description>
         </item>
-        <item>
-        <title>Archives</title>
-        <link>https://example.com/p/archives/</link>
-        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/p/archives/</guid>
-        <description></description>
-        </item>
         
     </channel>
 </rss>
