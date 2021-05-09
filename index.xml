@@ -30,8 +30,108 @@
         <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
         
         <guid>https://example.com/p/firstpost/</guid>
-        <description>&lt;img src="https://example.com/1.jpg" alt="Featured image of post FirstPost" /&gt;&lt;p&gt;hello,world!111111111111&lt;/p&gt;
+        <description>&lt;img src="https://example.com/1.jpg" alt="Featured image of post FirstPost" /&gt;&lt;p&gt;1.跨站脚本攻击XSS**（Cross-Site Scripting）**&lt;/p&gt;
+&lt;p&gt;造成的危害：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;利用虚假输入表单骗取用户个人信息&lt;/li&gt;
+&lt;li&gt;利用脚本窃取cookie值，被害者在不知情的情况下，帮助攻击者发送恶意请求&lt;/li&gt;
+&lt;li&gt;显示伪造的文章或图片&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;根据攻击的来源，XSS 攻击可分为&lt;strong&gt;反射型、存储型和 DOM 型&lt;/strong&gt;三种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;反射性XSS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;发出请求时，XSS代码出现在URL中，作为输入提交到服务器端，服务器端解析后响应，XSS代码随响应内容一起传回给浏览器，最后浏览器解析执行XSS代码。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img2020.cnblogs.com/blog/1941408/202007/1941408-20200706194102087-2032849655.jpg&#34; alt=&#34;img&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;1.攻击者给用户发送一个恶意构造了的web的URL&lt;/p&gt;
+&lt;p&gt;2.用户点击并查看这个URL时，网站服务端将恶意代码从URL中取出，拼接在HTML中返回给浏览器&lt;/p&gt;
+&lt;p&gt;3.用户获取到一个具有漏洞的HTML页面并显示在本地浏览器中，恶意代码也被执行&lt;/p&gt;
+&lt;p&gt;4.漏洞HTML 页面执行恶意JavaScript脚本，将用户信息盗取发送给攻击者，或者篡改用户看到的数据，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;反射型XSS防御：&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​      1.web页面渲染的所有内容或者渲染的数据都必须来自于服务端。&lt;/p&gt;
+&lt;p&gt;​	  2.尽量不要从 &lt;code&gt;URL&lt;/code&gt;，&lt;code&gt;document.referrer&lt;/code&gt;，&lt;code&gt;document.forms&lt;/code&gt; 等这种 DOM API 中获取数据直接渲染。&lt;/p&gt;
+&lt;p&gt;​	  3.尽量不要使用 &lt;code&gt;eval&lt;/code&gt;, &lt;code&gt;new Function()&lt;/code&gt;，&lt;code&gt;document.write()&lt;/code&gt;，&lt;code&gt;document.writeln()&lt;/code&gt;，&lt;code&gt;window.setInterval()&lt;/code&gt;，&lt;code&gt;window.setTimeout()&lt;/code&gt;，&lt;code&gt;innerHTML&lt;/code&gt;，&lt;code&gt;document.createElement()&lt;/code&gt; 等可执行字符串的方法。&lt;/p&gt;
+&lt;p&gt;​      4.前端渲染的时候对任何字段都需要做escape转义编码。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;存储型XSS&lt;/p&gt;
+&lt;p&gt;存储型XSS和反射型XSS的差别仅在于，提交的代码会存储在服务器端，每一个访问特定网页的用户都会被攻击。(是一种持久型XSS漏洞)一般存在于Form表单提交等交互功能，如文章留言，提交文本信息等。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img2020.cnblogs.com/blog/1941408/202007/1941408-20200706195435007-1322008060.jpg&#34; alt=&#34;img&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;具体的攻击过程：&lt;/p&gt;
+&lt;p&gt;​    1、攻击者将恶意代码提交到目标网站的数据库中。&lt;/p&gt;
+&lt;p&gt;​    2、用户打开目标网站时，网站服务端将恶意代码从数据库取出，拼接在 HTML 中返回给浏览器。&lt;/p&gt;
+&lt;p&gt;​    3、用户浏览器接收到响应后解析执行，混在其中的恶意代码也被执行。&lt;/p&gt;
+&lt;p&gt;​    4、恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;攻击成功需要同时满足下面的条件：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;POST请求提交表单后端没做转义直接入库&lt;/li&gt;
+&lt;li&gt;后端从数据库中取出数据没做转义直接输出给前端&lt;/li&gt;
+&lt;li&gt;前端拿到后端数据没做转义直接渲染成 DOM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;存储型XSS防御：&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;后端需要对提交的数据进行过滤。&lt;/li&gt;
+&lt;li&gt;前端也可以做一下处理方式，比如对script标签，将特殊字符替换成HTML编码这些等。&lt;/li&gt;
+&lt;li&gt;纯前端渲染，把代码和数据分隔开。渲染过程：浏览器先加载一个静态 HTML，此 HTML 中不包含任何跟业务相关的数据；然后浏览器执行 HTML 中的 JavaScript；JavaScript 通过 Ajax 加载业务数据，调用 DOM API 更新到页面上。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;DOM型XSS&lt;/p&gt;
+&lt;p&gt;通过 HTML DOM植入js代码，造成dom的更改，DOM类型的XSS可能是反射型也可能是储存型。&lt;/p&gt;
+&lt;p&gt;和前两种XSS的区别：&lt;strong&gt;DOM型XSS攻击中，取出和执行恶意代码由浏览器端完成，属于前端自身的安全漏洞&lt;/strong&gt;，而其他两种XSS属于服务端的安全漏洞。&lt;/p&gt;
+&lt;p&gt;攻击过程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;攻击者构造出特殊的 URL，其中包含恶意代码。&lt;/li&gt;
+&lt;li&gt;用户打开带有恶意代码的 URL。&lt;/li&gt;
+&lt;li&gt;用户浏览器接收到响应后解析执行，前端 JavaScript 取出 URL 中的恶意代码并执行。&lt;/li&gt;
+&lt;li&gt;恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;DOM型XSS防御：&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;​    1、在使用 .innerHTML、.outerHTML、document.write() 时要特别小心，不要把不可信的数据作为 HTML 插到页面上，而应尽量使用 .textContent、.setAttribute() 等。&lt;/p&gt;
+&lt;p&gt;​	2.Http only：eb应用程序在设置cookie时，将其属性设为HttpOnly，就可以避免该网页的cookie被客户端恶意JavaScript窃取，保护用户cookie信息。&lt;/p&gt;
+&lt;p&gt;​	3.对输入要求格式严谨检查过滤&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2.点击劫持攻击(&lt;strong&gt;ClickJacking&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;攻击者将需要攻击的网站通过iframe嵌套的方式嵌入到自己的网页中，并将iframe设为透明，在页面中透出一个按钮诱导用户点击。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;网络劫持&lt;/strong&gt;一般分为两种:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DNS劫持: (输入京东被强制跳转到淘宝这就属于dns劫持)
+&lt;ul&gt;
+&lt;li&gt;DNS强制解析: 通过修改运营商的本地DNS记录，来引导用户流量到缓存服务器；&lt;/li&gt;
+&lt;li&gt;302跳转的方式: 通过监控网络出口的流量，分析判断哪些内容是可以进行劫持处理的,再对劫持的内存发起302跳转的回复，引导用户获取内容。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;HTTP劫持: (访问谷歌但是一直有贪玩蓝月的广告)，由于http明文传输，运营商会修改你的http响应内容(即加广告)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;点击劫持防御：&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在HTTP头中加入 X-FRAME-OPTIONS 属性，此属性控制页面是否可被嵌入 iframe 中。&lt;/p&gt;
+&lt;p&gt;DENY：不能被所有网站嵌套或加载；&lt;/p&gt;
+&lt;p&gt;SAMEORIGIN：只能被同域网站嵌套或加载；&lt;/p&gt;
+&lt;p&gt;ALLOW-FROM URL：可以被指定网站嵌套或加载。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 &lt;strong&gt;FrameBusting&lt;/strong&gt; **代码：**使用 JavaScript 脚本阻止恶意网站载入网页&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;使用认证码认证用户&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 </description>
+        </item>
+        <item>
+        <title>Archives</title>
+        <link>https://example.com/p/archives/</link>
+        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/p/archives/</guid>
+        <description></description>
         </item>
         
     </channel>

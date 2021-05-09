@@ -1,30 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Hello,Petrichoryi!</title>
-    <link>https://example.com/post/</link>
-    <description>Recent content in Posts on Hello,Petrichoryi!</description>
+    <title>前端安全 on Hello,Petrichoryi!</title>
+    <link>https://example.com/categories/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/</link>
+    <description>Recent content in 前端安全 on Hello,Petrichoryi!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>FirstPost</title>
-      <link>https://example.com/p/firstpost/</link>
-      <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/p/firstpost/</guid>
-      <description>hello,world!111111111111</description>
-    </item>
-    
-    <item>
-      <title>FirstPost</title>
-      <link>https://example.com/p/firstpost/</link>
-      <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/p/firstpost/</guid>
-      <description>hello,world!111111111111</description>
-    </item>
-    
+    <lastBuildDate>Sun, 09 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FirstPost</title>
       <link>https://example.com/p/firstpost/</link>
@@ -53,15 +35,6 @@
 ​ 4、恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。
 攻击成功需要同时满足下面的条件：
  POST请求提交表单后端没做转义直接入库 后端从数据库中取出数据没做转义直接输出给前端 前端拿到后端数据没做转义直接渲染成 DOM  存储型XSS防御：   后端需要对提交的数据进行过滤。 前端也可以做一下处理方式，比如对script标签，将特殊字符替换成HTML编码这些等。 纯前端渲染，把代码和数据分隔开。渲染过程：浏览器先加载一个静态 HTML，此 HTML 中不包含任何跟业务相关的数据；然后浏览器执行 HTML 中的 JavaScript；JavaScript 通过 Ajax 加载业务数据，调用 DOM API 更新到页面上。    DOM型XSS</description>
-    </item>
-    
-    <item>
-      <title>Archives</title>
-      <link>https://example.com/p/archives/</link>
-      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/p/archives/</guid>
-      <description></description>
     </item>
     
   </channel>

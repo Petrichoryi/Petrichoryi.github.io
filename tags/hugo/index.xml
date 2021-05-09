@@ -25,14 +25,5 @@
       <description>hello,world!111111111111</description>
     </item>
     
-    <item>
-      <title>FirstPost</title>
-      <link>https://example.com/p/firstpost/</link>
-      <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/p/firstpost/</guid>
-      <description>hello,world!111111111111</description>
-    </item>
-    
   </channel>
 </rss>
