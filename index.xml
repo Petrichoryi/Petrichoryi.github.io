@@ -12,24 +12,6 @@
         <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
         
         <guid>https://example.com/p/firstpost/</guid>
-        <description>&lt;img src="https://example.com/1.jpg" alt="Featured image of post FirstPost" /&gt;&lt;p&gt;hello,world!111111111111&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>FirstPost</title>
-        <link>https://example.com/p/firstpost/</link>
-        <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/p/firstpost/</guid>
-        <description>&lt;img src="https://example.com/1.jpg" alt="Featured image of post FirstPost" /&gt;&lt;p&gt;hello,world!111111111111&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>FirstPost</title>
-        <link>https://example.com/p/firstpost/</link>
-        <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/p/firstpost/</guid>
         <description>&lt;img src="https://example.com/1.jpg" alt="Featured image of post FirstPost" /&gt;&lt;p&gt;1.跨站脚本攻击XSS**（Cross-Site Scripting）**&lt;/p&gt;
 &lt;p&gt;造成的危害：&lt;/p&gt;
 &lt;ul&gt;

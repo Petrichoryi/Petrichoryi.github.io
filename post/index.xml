@@ -13,24 +13,6 @@
       <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://example.com/p/firstpost/</guid>
-      <description>hello,world!111111111111</description>
-    </item>
-    
-    <item>
-      <title>FirstPost</title>
-      <link>https://example.com/p/firstpost/</link>
-      <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/p/firstpost/</guid>
-      <description>hello,world!111111111111</description>
-    </item>
-    
-    <item>
-      <title>FirstPost</title>
-      <link>https://example.com/p/firstpost/</link>
-      <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/p/firstpost/</guid>
       <description>1.跨站脚本攻击XSS**（Cross-Site Scripting）**
 造成的危害：
  利用虚假输入表单骗取用户个人信息 利用脚本窃取cookie值，被害者在不知情的情况下，帮助攻击者发送恶意请求 显示伪造的文章或图片  根据攻击的来源，XSS 攻击可分为反射型、存储型和 DOM 型三种：

@@ -17,15 +17,6 @@
     </item>
     
     <item>
-      <title>hugo</title>
-      <link>https://example.com/tags/hugo/</link>
-      <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>安全</title>
       <link>https://example.com/tags/%E5%AE%89%E5%85%A8/</link>
       <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
