@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javaScript on Hello,Petrichoryi!</title>
+    <link>https://example.com/categories/javascript/</link>
+    <description>Recent content in javaScript on Hello,Petrichoryi!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 May 2021 20:50:58 +0800</lastBuildDate><atom:link href="https://example.com/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>js常用设计模式(一)</title>
+      <link>https://example.com/p/js%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%80/</link>
+      <pubDate>Thu, 20 May 2021 20:50:58 +0800</pubDate>
+      
+      <guid>https://example.com/p/js%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%80/</guid>
+      <description>设计原则 单一设计原则：一个对象或方法只做一件事情。应该把对象或方法划分成较小的粒度。
+最少知识原则：一个软件实体应当尽可能少地与其他实体发生相互作用。应当最少减少对象之间的交互。
+开放-封闭原则：软件实体(类、模块、函数)等应该是可以扩展的，但是不可修改。
+设计模式 什么是设计模式？
+ 假设有一个空房间，我们要日复一日地往里 面放一些东西。最简单的办法当然是把这些东西 直接扔进去，但是时间久了，就会发现很难从这 个房子里找到自己想要的东西，要调整某几样东 西的位置也不容易。所以在房间里做一些柜子也 许是个更好的选择，虽然柜子会增加我们的成 本，但它可以在维护阶段为我们带来好处。使用 这些柜子存放东西的规则，或许就是一种模式。
+ 学习设计模式，便于写出可复用和可维护性高的程序。
+设计模式的原则：找出程序中变化的地方，并将变化封装起来。
+1.单例模式 定义：保证一个类只有一个实例，并提供一个访问它的全局访问点。
+**核心：**确保只有一个实例，并提供全局访问。
+实现：用一个变量来标识实例是否已经存在，如果存在，则直接返回已经创建好的实例，反之就创建一个对象。
+使用闭包持久保存上一次的执行结果，在之后的调用中直接返回。
+var getSingle = function (fn) { // 创建单例方法  var result // 通过闭包保存创建过的对象  return function () { return result || (result = fn.apply(this, arguments)) } } var createPerson = getSingle(function (name) { return {name: name} }) var person1 = createPerson(&amp;#39;张三&amp;#39;) var person2 = createPerson(&amp;#39;李四&amp;#39;) console.log(person1, person2); // {name: &amp;#39;张三&amp;#39;} {name: &amp;#39;张三&amp;#39;} 2.</description>
+    </item>
+    
+  </channel>
+</rss>
