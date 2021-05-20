@@ -24,7 +24,7 @@
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;反射型XSS&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;发出请求时，XSS代码出现在URL中，作为输入提交到服务器端，服务器端解析后响应，XSS代码随响应内容一起传回给浏览器，最后浏览器解析执行XSS代码。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://example.com/%e5%8f%8d%e5%b0%84%e5%9e%8bXSS.jpg&#34; alt=&#34;img&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/1.jpg&#34; alt=&#34;img&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;1.攻击者给用户发送一个恶意构造了的web的URL&lt;/p&gt;
 &lt;p&gt;2.用户点击并查看这个URL时，网站服务端将恶意代码从URL中取出，拼接在HTML中返回给浏览器&lt;/p&gt;
 &lt;p&gt;3.用户获取到一个具有漏洞的HTML页面并显示在本地浏览器中，恶意代码也被执行&lt;/p&gt;
@@ -40,7 +40,7 @@
 &lt;li&gt;
 &lt;p&gt;存储型XSS&lt;/p&gt;
 &lt;p&gt;存储型XSS和反射型XSS的差别仅在于，提交的代码会存储在服务器端，每一个访问特定网页的用户都会被攻击。(是一种持久型XSS漏洞)一般存在于Form表单提交等交互功能，如文章留言，提交文本信息等。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://example.com/%e5%ad%98%e5%82%a8%e5%9e%8bXSS.jpg&#34; alt=&#34;img&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/2.jpg&#34; alt=&#34;img&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;具体的攻击过程：&lt;/p&gt;
 &lt;p&gt;​    1、攻击者将恶意代码提交到目标网站的数据库中。&lt;/p&gt;
 &lt;p&gt;​    2、用户打开目标网站时，网站服务端将恶意代码从数据库取出，拼接在 HTML 中返回给浏览器。&lt;/p&gt;
