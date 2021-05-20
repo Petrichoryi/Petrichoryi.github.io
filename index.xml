@@ -7,12 +7,12 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Sun, 09 May 2021 12:48:15 +0800</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>FirstPost</title>
-        <link>https://example.com/p/firstpost/</link>
+        <title>前端安全问题</title>
+        <link>https://example.com/p/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/</link>
         <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/p/firstpost/</guid>
-        <description>&lt;img src="https://example.com/1.jpg" alt="Featured image of post FirstPost" /&gt;&lt;p&gt;1.跨站脚本攻击XSS**（Cross-Site Scripting）**&lt;/p&gt;
+        <guid>https://example.com/p/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/</guid>
+        <description>&lt;img src="https://example.com/1.jpg" alt="Featured image of post 前端安全问题" /&gt;&lt;p&gt;1.跨站脚本攻击XSS**（Cross-Site Scripting）**&lt;/p&gt;
 &lt;p&gt;造成的危害：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;利用虚假输入表单骗取用户个人信息&lt;/li&gt;
@@ -22,9 +22,9 @@
 &lt;p&gt;根据攻击的来源，XSS 攻击可分为&lt;strong&gt;反射型、存储型和 DOM 型&lt;/strong&gt;三种：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;反射性XSS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;反射型XSS&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;发出请求时，XSS代码出现在URL中，作为输入提交到服务器端，服务器端解析后响应，XSS代码随响应内容一起传回给浏览器，最后浏览器解析执行XSS代码。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img2020.cnblogs.com/blog/1941408/202007/1941408-20200706194102087-2032849655.jpg&#34; alt=&#34;img&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/%e5%8f%8d%e5%b0%84%e5%9e%8bXSS.jpg&#34; alt=&#34;img&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;1.攻击者给用户发送一个恶意构造了的web的URL&lt;/p&gt;
 &lt;p&gt;2.用户点击并查看这个URL时，网站服务端将恶意代码从URL中取出，拼接在HTML中返回给浏览器&lt;/p&gt;
 &lt;p&gt;3.用户获取到一个具有漏洞的HTML页面并显示在本地浏览器中，恶意代码也被执行&lt;/p&gt;
@@ -40,7 +40,7 @@
 &lt;li&gt;
 &lt;p&gt;存储型XSS&lt;/p&gt;
 &lt;p&gt;存储型XSS和反射型XSS的差别仅在于，提交的代码会存储在服务器端，每一个访问特定网页的用户都会被攻击。(是一种持久型XSS漏洞)一般存在于Form表单提交等交互功能，如文章留言，提交文本信息等。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img2020.cnblogs.com/blog/1941408/202007/1941408-20200706195435007-1322008060.jpg&#34; alt=&#34;img&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/%e5%ad%98%e5%82%a8%e5%9e%8bXSS.jpg&#34; alt=&#34;img&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;具体的攻击过程：&lt;/p&gt;
 &lt;p&gt;​    1、攻击者将恶意代码提交到目标网站的数据库中。&lt;/p&gt;
 &lt;p&gt;​    2、用户打开目标网站时，网站服务端将恶意代码从数据库取出，拼接在 HTML 中返回给浏览器。&lt;/p&gt;
@@ -105,6 +105,19 @@
 &lt;p&gt;&lt;strong&gt;使用认证码认证用户&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;3.CSRF(跨站请求伪造)&lt;/p&gt;
+&lt;p&gt;是建立在浏览器和Web服务器的会话中。&lt;/p&gt;
+&lt;p&gt;攻击过程：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用户登录受信任网站，输入用户名和密码&lt;/li&gt;
+&lt;li&gt;受信任网站通过验证请求后，生成用户的cookie&lt;/li&gt;
+&lt;li&gt;用户没有退出受信任网站时访问危险网站，危险网站利用用户的cookie信息，向受信任网站发送恶意请求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;防御方式&lt;/p&gt;
+&lt;p&gt;1.验证http协议中的referer字段，它记录了该http请求的来源地址，&lt;strong&gt;通过检查http包头referer的值是不是这个页面，来判断是不是CSRF攻击&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2.添加验证码，提交请求时进行人工确认&lt;/p&gt;
+&lt;p&gt;3.在请求地址中添加token验证&lt;/p&gt;
+&lt;p&gt;关键：在请求中放入攻击者不能伪造的信息，并且该信息不在cookie中。系统开发者可以在&lt;!-- raw HTML omitted --&gt;HTTP请求中以参数的形式加入一个随机产生的token，并在服务器端建立一个拦截器来验证这个token。服务器读取浏览器当前域cookie中这个token值，会进行校验该请求当中的token和cookie当中的token值是否都存在且相等&lt;!-- raw HTML omitted --&gt;，才认为这是合法的请求。否则认为这次请求是违法的，拒绝该次服务.&lt;/p&gt;
 </description>
         </item>
         

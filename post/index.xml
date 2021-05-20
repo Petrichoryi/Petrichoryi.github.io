@@ -8,15 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 09 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>FirstPost</title>
-      <link>https://example.com/p/firstpost/</link>
+      <title>前端安全问题</title>
+      <link>https://example.com/p/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/</link>
       <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/p/firstpost/</guid>
+      <guid>https://example.com/p/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/</guid>
       <description>1.跨站脚本攻击XSS**（Cross-Site Scripting）**
 造成的危害：
  利用虚假输入表单骗取用户个人信息 利用脚本窃取cookie值，被害者在不知情的情况下，帮助攻击者发送恶意请求 显示伪造的文章或图片  根据攻击的来源，XSS 攻击可分为反射型、存储型和 DOM 型三种：
-  反射性XSS
+  反射型XSS
 发出请求时，XSS代码出现在URL中，作为输入提交到服务器端，服务器端解析后响应，XSS代码随响应内容一起传回给浏览器，最后浏览器解析执行XSS代码。
 1.攻击者给用户发送一个恶意构造了的web的URL
 2.用户点击并查看这个URL时，网站服务端将恶意代码从URL中取出，拼接在HTML中返回给浏览器
