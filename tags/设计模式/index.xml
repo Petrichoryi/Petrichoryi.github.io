@@ -6,7 +6,26 @@
     <description>Recent content in 设计模式 on Hello,Petrichoryi!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 May 2021 20:50:58 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 May 2021 21:27:07 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>js常用设计模式(二)</title>
+      <link>https://example.com/p/js%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%BA%8C/</link>
+      <pubDate>Thu, 20 May 2021 21:27:07 +0800</pubDate>
+      
+      <guid>https://example.com/p/js%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%BA%8C/</guid>
+      <description>5.发布-订阅模式 定义：又称观察者模式，定义了对象间的一种一对多的关系，当一个对象的状态发生改变时，所有依赖于它的对象都将得到通知。应用场景：dom事件通知机制(document.addEventListener)，以及vue框架中数据改变时自动刷新dom的双向绑定机制。
+优点
+一为时间上的解耦，二为对象之间的解耦。可以用在异步编程中与MV*框架中.
+缺点
+创建订阅者本身要消耗一定的时间和内存，订阅的处理函数不一定会被执行，驻留内存有性能开销
+弱化了对象之间的联系，复杂的情况下可能会导致程序难以跟踪维护和理解.
+例：
+小A在公司C完成了笔试及面试，小B也在公司C完成了笔试。他们焦急地等待结果，每隔半天就电话询问公司C，导致公司C很不耐烦。
+一种解决办法是 AB直接把联系方式留给C，有结果的话C自然会通知AB。
+这里的“询问”属于显示调用，“留给”属于订阅，“通知”属于发布。
+// 观察者 var observer = { // 订阅集合  subscribes: [], // 订阅  subscribe: function(type, fn) { if (!this.subscribes[type]) { this.subscribes[type] = []; } // 收集订阅者的处理  typeof fn === &amp;#39;function&amp;#39; &amp;amp;&amp;amp; this.subscribes[type].push(fn); }, // 发布 可能会携带一些信息发布出去  publish: function() { var type = [].shift.call(arguments), fns = this.subscribes[type]; // 不存在的订阅类型，以及订阅时未传入处理回调的  if (!fns || !fns.length) { return; } // 挨个处理调用  for (var i = 0; i &amp;lt; fns.</description>
+    </item>
+    
     <item>
       <title>js常用设计模式(一)</title>
       <link>https://example.com/p/js%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%80/</link>

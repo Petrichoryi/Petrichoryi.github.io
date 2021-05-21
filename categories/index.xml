@@ -6,31 +6,31 @@
     <description>Recent content in Categories on Hello,Petrichoryi!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 May 2021 20:50:58 +0800</lastBuildDate><atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 May 2021 11:25:09 +0800</lastBuildDate><atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>javaScript</title>
+      <title>javascript</title>
       <link>https://example.com/categories/javascript/</link>
-      <pubDate>Thu, 20 May 2021 20:50:58 +0800</pubDate>
+      <pubDate>Fri, 21 May 2021 11:25:09 +0800</pubDate>
       
       <guid>https://example.com/categories/javascript/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>杂技浅尝</title>
-      <link>https://example.com/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/</link>
-      <pubDate>Sun, 09 May 2021 12:48:15 +0800</pubDate>
+      <title>前端安全</title>
+      <link>https://example.com/categories/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/</link>
+      <pubDate>Fri, 21 May 2021 11:25:09 +0800</pubDate>
       
-      <guid>https://example.com/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/</guid>
+      <guid>https://example.com/categories/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>前端安全</title>
-      <link>https://example.com/categories/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/</link>
-      <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
+      <title>杂技浅尝</title>
+      <link>https://example.com/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/</link>
+      <pubDate>Fri, 21 May 2021 11:25:09 +0800</pubDate>
       
-      <guid>https://example.com/categories/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/</guid>
+      <guid>https://example.com/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/</guid>
       <description></description>
     </item>
     
